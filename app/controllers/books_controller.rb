@@ -1,12 +1,13 @@
 class BooksController < ApplicationController
   
-  before_action :check_user, {only: [:edit]
+  before_action :check_user, only: [:edit]
 
   def show
     @book = Book.find(params[:id])
     @book_new = Book.new
     @user = current_user
     @users = @book.user
+    
   end
 
   def index
